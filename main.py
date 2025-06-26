@@ -47,7 +47,8 @@ def main():
     for tweet in tweets:
         if last_id and str(tweet["id"]) <= last_id:
             continue
-        if "binance alpha" in tweet["content"].lower() and "feature" in tweet["content"].lower():
+        content_lower = tweet["content"].lower()
+        if "binance alpha" in content_lower and "feature" in content_lower:
             new_tweets.append(tweet)
 
     new_tweets.sort(key=lambda x: x["id"])  # biar urut lama ke baru
@@ -58,4 +59,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-  
+    
